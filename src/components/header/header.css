@@ -1,0 +1,98 @@
+header {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+  position: relative;
+  z-index: 9999;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav a {
+  text-transform: capitalize;
+  margin-right: 30px;
+  color: black;
+}
+
+/* Profile */
+.profile {
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.profile .image {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.profile button {
+  font-size: 17px;
+  font-weight: 500px;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.openProfile {
+  color: black;
+  box-shadow: 0 2px 4px rgb(0 0 0 /8%);
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 250px;
+  background-color: white;
+}
+
+.openProfile .box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+  transition: 0.5s;
+}
+
+.openProfile .icon {
+  font-size: 20px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.openProfile h4 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.openProfile button:hover {
+  background: rgba(147, 75, 255, 0.75);
+}
+
+header.active {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 4px 0 rgb(115, 115, 115 / 20%);
+}
+
+.text {
+  margin-left: 10px;
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    display: none;
+  }
+}
+
+
+header .icon{
+  margin-right:15px;
+}
