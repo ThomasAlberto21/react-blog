@@ -1,8 +1,10 @@
-import React from 'react';
-import logo from '../../assets/images/logo.svg';
+import { useRef } from 'react';
+import logo from '../../assets/images/logo.png';
 import { nav } from '../../assets/data/data';
 import { Link } from 'react-router-dom';
 import { User } from './User';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { ImCross } from 'react-icons/im';
 import './header.css';
 
 export const Header = () => {
@@ -11,14 +13,23 @@ export const Header = () => {
     header.classList.toggle('active', this.window.scrollY > 100);
   });
 
+  const navRef = useRef();
+
+  const showNavbar = () => {
+    navRef.current.classList.toggle('responsive_nav');
+  };
+
   return (
     <>
       <header className='header'>
         <div className='container flex'>
+          <button className='nav-btn' onClick={showNavbar}>
+            <GiHamburgerMenu />
+          </button>
           <div className='logo'>
             <img src={logo} alt='logo' width='100px' />
           </div>
-          <nav>
+          <nav ref={navRef}>
             <ul>
               {nav.map((link) => (
                 <li key={link.id}>
@@ -26,13 +37,15 @@ export const Header = () => {
                 </li>
               ))}
             </ul>
+            <button className='nav-btn nav-close-btn' onClick={showNavbar}>
+              <ImCross />
+            </button>
           </nav>
           <div className='account flexCenter'>
             <User />
           </div>
         </div>
       </header>
-
     </>
   );
 };

@@ -83,16 +83,64 @@ header.active {
 
 .text {
   margin-left: 10px;
-  color: black;
+  color: #6f606060;
+}
+
+.nav-btn {
+  justify-content: center;
+  display: none;
+  font-size: 1.4rem;
 }
 
 @media screen and (max-width: 768px) {
+  header .nav-btn {
+    display: block;
+  }
+
   nav {
+    position: fixed;
+    top: 0;
     display: none;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: white;
+    transition: 0.5s;
+    transform: translateY(-100vh);
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5rem;
+  }
+
+  nav ul li {
+    text-align: center;
+    margin: 10px 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header .responsive_nav {
+    transform: none;
+  }
+
+  header .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  header .logo {
+    margin-left: 3rem;
   }
 }
 
-
-header .icon{
-  margin-right:15px;
+header .icon {
+  margin-right: 15px;
 }
